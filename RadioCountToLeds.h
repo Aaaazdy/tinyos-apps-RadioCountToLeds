@@ -43,7 +43,7 @@
 
 typedef nx_struct radio_count_msg {
   nx_uint16_t counter;
-  nx_uint8_t nodeid;
+  nx_uint16_t nodeid;
 } radio_count_msg_t;
 
 enum {

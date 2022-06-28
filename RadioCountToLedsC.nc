@@ -71,13 +71,12 @@ implementation {
 
   bool locked;
   uint16_t counter = 0;
-  uint8_t nodeid=0;
+  
   event void Boot.booted() {
-   //call AMControl.start();
     call Leds.led0On();
     dbg("Boot,RadioCountToLedsC","Application booted.\n");
-    dbg("Boot,RadioCountToLedsC","Application booted again.\n");
-    dbg("Boot,RadioCountToLedsC","Application booted a third time.\n");  
+    dbg("RadioCountToLedsC","Application booted again.\n");
+    dbg("Boot","Applcation booted a third time.\n");
     call AMControl.start();
   }
 
@@ -96,7 +95,7 @@ implementation {
   
   event void MilliTimer.fired() {
     counter++;
-    dbg("Boot,RadioCountToLedsC", "RadioCountToLedsC: timer fired, counter is %hu.\n", counter);
+    dbg("RadioCountToLedsC", "RadioCountToLedsC: timer fired, counter is %hu.\n", counter);
     if (locked) {
       return;
     }
@@ -107,22 +106,21 @@ implementation {
       }
 
       rcm->counter = counter;
-      rcm->nodeid=TOS_NODE_ID;
+      rcm->nodeid = TOS_NODE_ID;
       if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
-	dbg("RadioCountToLedsC", "RadioCountToLedsC: packet sent.\n", counter);	
-	dbg("Boot","Packet sent succeed.\n Send info :from node%hhu. time:%s\n ",rcm->nodeid,sim_time_string());
-        locked = TRUE;
+	dbg("RadioCountToLedsC", "Packet sent from node %hhu. Sent time: %s.\n", rcm->nodeid, sim_time_string());	
+	locked = TRUE;
       }
     }
   }
 
   event message_t* Receive.receive(message_t* bufPtr, 
 				   void* payload, uint8_t len) {
-    dbg("RadioCountToLedsC,Boot", "Received packet of length %hhu.\n", len);
+//    dbg("RadioCountToLedsC", "Received packet of length %hhu.\n", len);
     if (len != sizeof(radio_count_msg_t)) {return bufPtr;}
     else {
       radio_count_msg_t* rcm = (radio_count_msg_t*)payload;
-      dbg("Boot","Packet received.\n Receive info:node%hhu received from node%hhu, time:%s",rcm->nodeid,TOS_NODE_ID,sim_time_string());
+      dbg("RadioCountToLedsC","Packet received by node %hhu from node %hhu. Received time: %s.\n",TOS_NODE_ID, rcm->nodeid, sim_time_string());
       if (rcm->counter & 0x1) {
 	call Leds.led0On();
       }

@@ -1,52 +1,26 @@
 DEBUG (1): Application booted.
 DEBUG (1): Application booted again.
-DEBUG (1): Application booted a third time.
 DEBUG (2): Application booted.
 DEBUG (2): Application booted again.
-DEBUG (2): Application booted a third time.
 DEBUG (3): Application booted.
 DEBUG (3): Application booted again.
-DEBUG (3): Application booted a third time.
 DEBUG (1): RadioCountToLedsC: timer fired, counter is 1.
-DEBUG (1): Packet sent succeed.
- Send info :from node1. time:0:0:0.244150635
- DEBUG (2): RadioCountToLedsC: timer fired, counter is 1.
-DEBUG (2): Packet sent succeed.
- Send info :from node2. time:0:0:0.244220635
- DEBUG (3): RadioCountToLedsC: timer fired, counter is 1.
-DEBUG (3): Packet sent succeed.
- Send info :from node3. time:0:0:0.244320635
- DEBUG (2): Received packet of length 3.
-DEBUG (2): Packet received.
- Receive info:node3 received from node2, time:0:0:0.248196345DEBUG (1): Received packet of length 3.
-DEBUG (1): Packet received.
- Receive info:node3 received from node1, time:0:0:0.248196345DEBUG (3): Received packet of length 3.
-DEBUG (3): Packet received.
- Receive info:node1 received from node3, time:0:0:0.250071010DEBUG (2): Received packet of length 3.
-DEBUG (2): Packet received.
- Receive info:node1 received from node2, time:0:0:0.250071010DEBUG (3): Received packet of length 3.
-DEBUG (3): Packet received.
- Receive info:node2 received from node3, time:0:0:0.251849985DEBUG (1): Received packet of length 3.
-DEBUG (1): Packet received.
- Receive info:node2 received from node1, time:0:0:0.251849985DEBUG (1): RadioCountToLedsC: timer fired, counter is 2.
-DEBUG (1): Packet sent succeed.
- Send info :from node1. time:0:0:0.488291260
- DEBUG (2): RadioCountToLedsC: timer fired, counter is 2.
-DEBUG (2): Packet sent succeed.
- Send info :from node2. time:0:0:0.488361260
- DEBUG (3): RadioCountToLedsC: timer fired, counter is 2.
-DEBUG (3): Packet sent succeed.
- Send info :from node3. time:0:0:0.488461260
- DEBUG (2): Received packet of length 3.
-DEBUG (2): Packet received.
- Receive info:node3 received from node2, time:0:0:0.492901542DEBUG (1): Received packet of length 3.
-DEBUG (1): Packet received.
- Receive info:node3 received from node1, time:0:0:0.492901542DEBUG (3): Received packet of length 3.
-DEBUG (3): Packet received.
- Receive info:node2 received from node3, time:0:0:0.495914317DEBUG (1): Received packet of length 3.
-DEBUG (1): Packet received.
- Receive info:node2 received from node1, time:0:0:0.495914317DEBUG (3): Received packet of length 3.
-DEBUG (3): Packet received.
- Receive info:node1 received from node3, time:0:0:0.497110788DEBUG (2): Received packet of length 3.
-DEBUG (2): Packet received.
- Receive info:node1 received from node2, time:0:0:0.497110788
+DEBUG (1): Packet sent from node 1. Sent time: 0:0:0.244150635.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (2): Packet sent from node 2. Sent time: 0:0:0.244220635.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (3): Packet sent from node 3. Sent time: 0:0:0.244320635.
+DEBUG (3): Packet received by node 3 from node 1. Received time: 0:0:0.248712986.
+DEBUG (2): Packet received by node 2 from node 1. Received time: 0:0:0.248712986.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (1): Packet sent from node 1. Sent time: 0:0:0.488291260.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (2): Packet sent from node 2. Sent time: 0:0:0.488361260.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (3): Packet sent from node 3. Sent time: 0:0:0.488461260.
+DEBUG (3): Packet received by node 3 from node 2. Received time: 0:0:0.490726359.
+DEBUG (1): Packet received by node 1 from node 2. Received time: 0:0:0.490726359.
+DEBUG (2): Packet received by node 2 from node 3. Received time: 0:0:0.496502595.
+DEBUG (1): Packet received by node 1 from node 3. Received time: 0:0:0.496502595.
+DEBUG (3): Packet received by node 3 from node 1. Received time: 0:0:0.497690619.
+DEBUG (2): Packet received by node 2 from node 1. Received time: 0:0:0.497690619.

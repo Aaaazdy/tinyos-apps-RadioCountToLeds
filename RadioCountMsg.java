@@ -7,12 +7,12 @@
 public class RadioCountMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 3;
+    public static final int DEFAULT_MESSAGE_SIZE = 4;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 6;
 
-    /** Create a new RadioCountMsg of size 3. */
+    /** Create a new RadioCountMsg of size 4. */
     public RadioCountMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -160,9 +160,9 @@ public class RadioCountMsg extends net.tinyos.message.Message {
 
     /////////////////////////////////////////////////////////
     // Accessor methods for field: nodeid
-    //   Field type: short, unsigned
+    //   Field type: int, unsigned
     //   Offset (bits): 16
-    //   Size (bits): 8
+    //   Size (bits): 16
     /////////////////////////////////////////////////////////
 
     /**
@@ -194,31 +194,31 @@ public class RadioCountMsg extends net.tinyos.message.Message {
     }
 
     /**
-     * Return the value (as a short) of the field 'nodeid'
+     * Return the value (as a int) of the field 'nodeid'
      */
-    public short get_nodeid() {
-        return (short)getUIntBEElement(offsetBits_nodeid(), 8);
+    public int get_nodeid() {
+        return (int)getUIntBEElement(offsetBits_nodeid(), 16);
     }
 
     /**
      * Set the value of the field 'nodeid'
      */
-    public void set_nodeid(short value) {
-        setUIntBEElement(offsetBits_nodeid(), 8, value);
+    public void set_nodeid(int value) {
+        setUIntBEElement(offsetBits_nodeid(), 16, value);
     }
 
     /**
      * Return the size, in bytes, of the field 'nodeid'
      */
     public static int size_nodeid() {
-        return (8 / 8);
+        return (16 / 8);
     }
 
     /**
      * Return the size, in bits, of the field 'nodeid'
      */
     public static int sizeBits_nodeid() {
-        return 8;
+        return 16;
     }
 
 }

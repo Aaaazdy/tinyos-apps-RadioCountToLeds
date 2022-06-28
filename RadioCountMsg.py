@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 3
+DEFAULT_MESSAGE_SIZE = 4
 
 # The Active Message type associated with this message.
 AM_TYPE = 6
 
 class RadioCountMsg(tinyos.message.Message.Message):
-    # Create a new RadioCountMsg of size 3.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=3):
+    # Create a new RadioCountMsg of size 4.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=4):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -99,9 +99,9 @@ class RadioCountMsg(tinyos.message.Message.Message):
     
     #
     # Accessor methods for field: nodeid
-    #   Field type: short
+    #   Field type: int
     #   Offset (bits): 16
-    #   Size (bits): 8
+    #   Size (bits): 16
     #
 
     #
@@ -129,26 +129,26 @@ class RadioCountMsg(tinyos.message.Message.Message):
         return 16
     
     #
-    # Return the value (as a short) of the field 'nodeid'
+    # Return the value (as a int) of the field 'nodeid'
     #
     def get_nodeid(self):
-        return self.getUIntElement(self.offsetBits_nodeid(), 8, 1)
+        return self.getUIntElement(self.offsetBits_nodeid(), 16, 1)
     
     #
     # Set the value of the field 'nodeid'
     #
     def set_nodeid(self, value):
-        self.setUIntElement(self.offsetBits_nodeid(), 8, value, 1)
+        self.setUIntElement(self.offsetBits_nodeid(), 16, value, 1)
     
     #
     # Return the size, in bytes, of the field 'nodeid'
     #
     def size_nodeid(self):
-        return (8 / 8)
+        return (16 / 8)
     
     #
     # Return the size, in bits, of the field 'nodeid'
     #
     def sizeBits_nodeid(self):
-        return 8
+        return 16
     
